@@ -1,4 +1,4 @@
-<h1 align="center"> Doc scanner docs </h1>
+<h1 align="center"> Doc scanner </h1>
 Doc scanner is a document scanning Rust library built with the use of WASM to ship bindings to the JS, Kotlin envs.
 
 <h2> Table of content </h2>
@@ -15,3 +15,7 @@ doc scanner uses Convolution and other math calculation formulas to detect docum
 <image src="./a1.png" alt="after1" ></image>
 <image src="./bb.jpg" alt="before2" ></image>
 <image src="./a2.png" alt="after2" ></image>
+
+<h2> Walkthrough </h2>
+Doc scanner rust lib provides two main functions that can be used to get a scanned document.
+the  
