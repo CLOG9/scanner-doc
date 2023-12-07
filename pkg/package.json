@@ -1,0 +1,14 @@
+{
+  "name": "scanner",
+  "version": "0.1.0",
+  "files": [
+    "scanner_bg.wasm",
+    "scanner.js",
+    "scanner.d.ts"
+  ],
+  "module": "scanner.js",
+  "types": "scanner.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
