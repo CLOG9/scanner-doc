@@ -22,7 +22,27 @@ the  ``find_document()`` function detects the best quadratic combination in an i
 
 <h3> <b>find_document()</b> </h3>
 
-```find_document(data: ImageData): WasmQuad | undefined```
+```
+find_document(data: ImageData): WasmQuad | undefined
+```
 
 ImageData: The underlying pixel data of an area of a element. It is created using the ImageData() constructor or creator methods on the CanvasRenderingContext2D object associated with a canvas: createImageData() and getImageData(). It can also be used to set a part of the canvas by using putImageData().
+
+```
+ Quad {
+            a: Point { x: ax, y: ay },
+            b: Point { x: bx, y: by },
+            c: Point { x: cx, y: cy },
+            d: Point { x: dx, y: dy },
+        }
+```
+
+the function return an object of quadratic combination of four points that represents the four edges of the detect document.
+each point has its own X and Y cordinates.
+
+<h3> <b>extract_document()</b> </h3>
+
+```
+extract_document(data: ImageData, region: WasmQuad, target_width: number, target_height?: number | undefined): ImageData
+```
 
