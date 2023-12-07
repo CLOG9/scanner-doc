@@ -13,5 +13,5 @@ doc scanner uses Convolution and other math calculation formulas to detect docum
 
 <image src="./b1.jpg" alt="before1" ></image>
 <image src="./a1.png" alt="after1" ></image>
-<image src="./b2.jpg" alt="before2" ></image>
+<image src="./bb.jpg" alt="before2" ></image>
 <image src="./a2.png" alt="after2" ></image>
