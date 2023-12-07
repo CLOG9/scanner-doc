@@ -22,3 +22,7 @@ the  ``find_document()`` function detects the best quadratic combination in an i
 
 <h3> <b>find_document()</b> </h3>
 
+```find_document(data: ImageData): WasmQuad | undefined```
+
+ImageData: The underlying pixel data of an area of a element. It is created using the ImageData() constructor or creator methods on the CanvasRenderingContext2D object associated with a canvas: createImageData() and getImageData(). It can also be used to set a part of the canvas by using putImageData().
+
