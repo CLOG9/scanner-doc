@@ -45,4 +45,54 @@ each point has its own X and Y cordinates.
 ```
 extract_document(data: ImageData, region: WasmQuad, target_width: number, target_height?: number | undefined): ImageData
 ```
+data: the actual image binary data.
+region: the quadratic combination passed through the WasmQuad function `we will explain it later`.
+target_width: the resolution width (highly recommneded to use the default value **1224**). 
+
+to achieve the right extraction follow these steps:
+<li> pass the Quad object to the WasmQuad function before passing it to the extraction function </li>
+<li> keep the target_width at the default value **1224** </li>
+<li> no need to pass the target_height value, leave it undefined </li>
+
+<h3> WasmQuad() </h3>
+
+```WasmQuad(ax: number, ay: number, bx: number, by: number, cx: number, cy: number, dx: number, dy: number): WasmQuad```
+
+accepts quad object returned from the find_document() and returns a WasmQuad object
+
+<h2>Implementation</h2>
+to use the library with the use of Wasm u should first initialize the wasm bindings in ur programming env
+here's an example with Javascript:
+
+```
+//
+// IMPORT INIT FUNCTION FROM THE WASM PACKAGE
+//
+import init from "../../pkg/scanner";
+
+// init
+let load = init().catch(() => {});
+
+// create a messaging system to invoke the other functions 
+self.onmessage = async (evt: MessageEvent<{ msg: Message }>) => {
+  await load;
+  const { msg, ...data } = evt.data;
+  try {
+    const { result, transfer } = handle(msg);
+    self.postMessage({ result, ...data }, transfer || []);
+  } catch (err) {
+    if (!(err instanceof Error)) {
+      err = new Error(`Error in process worker: ${err}`);
+    }
+    self.postMessage({
+      error: {
+        message: (err as Error).message,
+        stack: (err as Error).stack,
+        name: (err as Error).name,
+      },
+      ...data,
+    });
+  }
+};
+```
 
