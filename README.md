@@ -4,7 +4,6 @@ Doc scanner is a document scanning Rust library built with the use of WASM to sh
 <h2> Table of content </h2>
 <li> Functionality </li>
 <li> Walkthrough </li>
-<li> API </li>
 <li> Implemenetation </li>
 
 <h2> Functionality </h2>
@@ -20,3 +19,6 @@ doc scanner uses Convolution and other math calculation formulas to detect docum
 
 Doc scanner rust lib provides two main functions that can be used to get a scanned document.
 the  ``find_document()`` function detects the best quadratic combination in an image that can possibly represent a document while the ``extract_document()`` function does the cropping and perspective transformation.
+
+<h3> <b>find_document()</b> </h3>
+
